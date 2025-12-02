@@ -100,40 +100,47 @@
 
         <h2>Resumo</h2>
         <p>
-            O crescimento populacional e a intensificação da urbanização têm provocado um aumento expressivo da frota de veículos, resultando em congestionamentos, maior tempo de deslocamento, consumo excessivo de combustível e aumento na emissão de poluentes. Diante desse cenário, os sistemas de controle de tráfego desempenham papel central, sendo os semáforos elementos importantes para garantir a fluidez e a segurança das interseções.
-
-Ciclos fixos não se adaptam às variações dinâmicas do tráfego, o que pode resultar em longos períodos de espera desnecessária e agravamento dos congestionamentos. Nesse contexto, o trabalho propõe o desenvolvimento de um software voltado à simulação e otimização do tempo de semáforos, modelando o problema como uma otimização multiobjetivo e empregando o algoritmo evolucionário NSGA-II.
-
-O software é capaz de gerar dados detalhados, como tempo médio de espera, comprimento das filas e vazão do tráfego, permitindo avaliar a eficácia das estratégias de controle e realizar uma análise crítica sobre sua viabilidade prática. O trabalho contribui para a discussão sobre soluções inovadoras no gerenciamento do tráfego urbano, oferecendo um protótipo de baixo custo para estudos mais avançados.
+            O crescimento populacional e a intensificação da urbanização têm provocado um
+            aumento expressivo da frota de veículos, resultando em congestionamentos, maior tempo
+            de deslocamento, consumo excessivo de combustível e aumento na emissão de poluentes.
+            Diante desse cenário, os sistemas de controle de tráfego desempenham papel central,
+            sendo os semáforos elementos importantes para garantir a fluidez e a segurança das
+            interseções.
         </p>
+        
+        <p>
+            Como os controladores semafóricos de ciclos fixos não se adaptam às variações dinâmicas do tráfego, podem ocorrer
+            longos períodos de espera desnecessária e agravamento dos congestionamentos. Por isso,
+            surge a necessidade de soluções mais inteligentes e adaptativas. Nesse contexto, o
+            trabalho propõe o desenvolvimento de um software voltado à simulação e otimização do
+            tempo de semáforos, modelando o problema como uma otimização multiobjetivo e
+            empregando o algoritmo evolucionário NSGA-II.
+        </p>
+        
+        <p>
+            O software é capaz de gerar dados detalhados, como tempo médio de espera, comprimento
+            das filas e vazão do tráfego, permitindo avaliar a eficácia das estratégias de
+            controle e realizar uma análise crítica sobre sua viabilidade prática. Dessa forma, o
+            trabalho contribui para a discussão sobre soluções inovadoras no gerenciamento do
+            tráfego urbano, oferecendo um protótipo de baixo custo para estudos mais avançados.
+        </p>
+
 
         <h2>Motivação</h2>
         <p>
             A motivação para o desenvolvimento deste projeto está diretamente relacionada aos desafios enfrentados pelas cidades modernas no gerenciamento do tráfego. O aumento da frota veicular, aliado à limitação da infraestrutura, exige soluções mais inteligentes que permitam reduzir o tempo de deslocamento e minimizar impactos ambientais. Ao mesmo tempo, já há tecnologias de simulação e otimização propícias ao desenvolvimento de ferramentas de software que podem auxiliar órgãos de trânsito e pesquisadores a avaliar diferentes estratégias de controle antes de sua aplicação prática. O projeto, portanto, é motivado tanto pela relevância social quanto pela oportunidade de aplicar conceitos de engenharia de software, algoritmos de otimização e sistemas inteligentes em um problema de grande impacto.
         </p>
 
-        <p>
-            O estilo é totalmente acadêmico e direto, muito parecido com páginas de
-            documentação ou apresentações formais de TCC.
-        </p>
 
         <h2>Objetivos</h2>
         <p>
-            Descreva aqui os objetivos gerais e específicos do seu trabalho. Você pode
-            colocar listas também:
+            O objetivo deste projeto consiste no desenvolvimento de um software capaz de otimizar a política semafórica de uma malha viária qualquer, empregando um algoritmo genético multiobjetivo.
         </p>
 
-        <ul>
-            <li>Objetivo específico 1</li>
-            <li>Objetivo específico 2</li>
-            <li>Objetivo específico 3</li>
-        </ul>
 
         <h2>Metodologia</h2>
-        <p>
-            Explique os métodos utilizados no seu estudo ou desenvolvimento. Esta parte
-            pode conter longos blocos de texto, imagens ou diagramas, caso você deseje.
-        </p>
+        
+
 
         <h2>Resultados</h2>
         <p>
@@ -146,12 +153,51 @@ O software é capaz de gerar dados detalhados, como tempo médio de espera, comp
             Finalize descrevendo sua conclusão, impactos, limitações e trabalhos futuros.
         </p>
 
-        <h2>Downloads</h2>
-        <p>
-            • <a href="#">Baixar PDF do TCC</a><br>
-            • <a href="#">Slides da apresentação</a><br>
-            • <a href="#">Repositório do projeto</a>
-        </p>
+        <h2>Autores</h2>
+
+        <p><strong>Integrantes:</strong></p>
+        <ul>
+            <li>Arthur Milani Giovanini</li>
+            <li>João Pedro Arroyo</li>
+        </ul>
+        
+        <p><strong>Orientador</strong></p>
+        <ul>
+            <li>Prof. Dr. Jaime Simão Sichman </li>
+        </ul>
+        
+        <p><strong>Coorientadores:</strong></p>
+        <ul>
+            <li>Dr. Vinicius Renan De Carvalho</li>
+        </ul>
+
+        <h2>Referências</h2>
+
+        <ol>
+            <li>
+                Kalyanmoy Deb, Amrit Pratap, Sameer Agarwal, T. Meyarivan.
+                <em>A Fast and Elitist Multiobjective Genetic Algorithm: NSGA-II.</em>
+            </li>
+        
+            <li>
+                J. Blank and K. Deb.
+                <em>pymoo: Multi-Objective Optimization in Python.</em>
+            </li>
+        
+            <li>
+                Pablo Alvarez Lopez, Michael Behrisch, Laura Bieker-Walz, Jakob Erdmann,
+                Yun-Pang Flötteröd, Robert Hilbrich, Leonhard Lücken, Johannes Rummel,
+                Peter Wagner, Evamarie Wießner.
+                <em>Microscopic Traffic Simulation using SUMO.</em>
+            </li>
+        
+            <li>
+                Projeto da Disciplina PTR 3514 – <em>Sistemas Inteligentes de Transporte</em>,
+                Escola Politécnica da USP, 2023.
+            </li>
+        </ol>
+
+
 
     </main>
 
