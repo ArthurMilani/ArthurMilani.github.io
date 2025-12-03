@@ -141,14 +141,79 @@
 
 
         <h2>Metodologia</h2>
+
+        <p>
+            Para a otimização semafórica da rede viária estudada, o primeiro passo foi modelar o 
+            problema, definindo os dados de entrada, as variáveis de otimização e as métricas 
+            utilizadas na função objetivo. Os dados de entrada caracterizam o cenário de tráfego 
+            a ser otimizado e são compostos pela geometria do trecho viário e pelas rotas dos 
+            veículos que cruzam a região no intervalo analisado. As variáveis de otimização 
+            correspondem aos tempos de verde dos semáforos e aos offsets responsáveis pelo 
+            sincronismo entre eles, definindo assim a política semafórica adotada.
+        </p>
+        
+        <p>
+            As métricas selecionadas para avaliar a qualidade do tráfego foram o máximo 
+            comprimento de fila registrado e o tempo médio em que os veículos permanecem parados. 
+            A primeira métrica, por ser um máximo, está ligada a uma via específica e penaliza 
+            situações em que há acúmulo excessivo de veículos. A segunda, por ser uma média, 
+            representa o desempenho geral do sistema, favorecendo soluções que mantêm o fluxo 
+            nas vias com maior demanda. Como a minimização de um objetivo não implica na 
+            minimização do outro, justifica-se o uso de uma abordagem multiobjetivo.
+        </p>
+        
+        <p>
+            Em seguida, foi proposta uma integração entre o algoritmo genético multiobjetivo 
+            NSGA-II <span>[1]</span>, implementado pela biblioteca Pymoo <span>[2]</span>, e o 
+            simulador SUMO (Simulation of Urban Mobility) <span>[3]</span>. A comunicação entre 
+            os sistemas foi realizada por meio da biblioteca TraCI, que permite alterar, em tempo 
+            real, a política semafórica e acessar as métricas necessárias para a avaliação das 
+            soluções. O algoritmo evolucionário mantém uma população de políticas semafóricas, 
+            avaliando cada indivíduo por meio de simulações no SUMO e utilizando os resultados 
+            para guiar o processo de seleção, recombinação e mutação ao longo das gerações.
+        </p>
+        
+        <p>
+            Por fim, para validar a metodologia proposta, foi realizada a calibração de um 
+            cenário real no SUMO <span>[4]</span>, utilizando dados do cruzamento das avenidas 
+            São Paulo e Giovanni Battista, em Santo André – SP. O programa foi executado 10 vezes, 
+            cada uma com populações iniciais distintas, de forma a ampliar a diversidade das 
+            soluções encontradas. Foram utilizados 50 gerações e uma população de 30 indivíduos. 
+            A Figura 2 apresenta a Fronteira de Pareto obtida, contendo as soluções não dominadas 
+            e o desempenho da solução corrente, permitindo avaliar a aplicabilidade e eficácia do 
+            sistema desenvolvido.
+        </p>
+
         
 
 
         <h2>Resultados</h2>
         <p>
-            Apresente seus resultados, análises, gráficos ou discussões. O layout acomoda
-            muito bem conteúdos extensos e técnicos.
+            Ao analisar o conjunto das execuções, observa-se que todas soluções
+            dominam completamente o caso tradicional, apresentando melhorias expressivas nas duas métricas
+            objetivo do algoritmo. A imagem abaixo representa a fronteira de Pareto final: possui dois pontos,
+            os quais consistem nas duas melhores soluções, possuindo um ganho de desempenho de 66.3% e 66.9% em
+            relação ao cenário tradicional. Esses resultados mostram que 
+            o algoritmo foi capaz de identificar configurações de tempo de verde que reduzem 
+            significativamente o tempo de espera e a formação de filas, oferecendo alternativas mais 
+            eficientes para o controle semafórico.
         </p>
+        <p>
+            Esse comportamento também é observado individualmente em praticamente todas as execuções, 
+            nas quais as soluções encontradas superam o caso corrente em ambas as métricas otimizadas.
+            Mesmo nos poucos cenários em que as melhores soluções apresentam desempenho semelhante à
+            solução corrente, como ocorreu na Execução 1, o valor da métrica composta, que corresponde à
+            média aritmética das duas métricas objetivo, demontra que o algoritmo ainda assim produz resultados melhores para o sistema.
+        </p>
+        <p>
+            Portanto, podemos afirmar que os resultados obtidos demonstram que o NSGA-II [1] foi capaz de gerar soluções
+            significativamente superiores ao cenário tradicional de tempos semafóricos. As
+            fronteiras de Pareto obtidas ao longo das execuções mostram que o algoritmo
+            encontrou, de forma consistente, alternativas que reduzem tanto o tempo médio de
+            espera quanto o tamanho das filas. Abaixo são apresentadas as fronteiras de Pareto 
+            obtidas em cada uma das execuções. 
+        </p>
+
 
         
         <h2>Conclusão</h2>
@@ -161,10 +226,10 @@
         </p>
         
         <p>
-            Algumas soluções tiveram desempenho inferior em simulações completas, indicando que
+            Algumas soluções tiveram desempenho semelhante em simulações completas, indicando que
             restrições de tempo e capacidade podem impedir a convergência para resultados mais
             robustos. Assim, recomenda-se o uso de populações maiores, mais gerações e simulações
-            completas em aplicações práticas.
+            completas em aplicações práticas e trabalhos futuros.
         </p>
         
         <p>
@@ -223,7 +288,7 @@
     </main>
 
     <footer>
-        © 2025 — Seu Nome · Sua Instituição
+        © 2025 — Arthur Milani Giovanini - João Pedro Arroyo · Escola Politécnica da USP
     </footer>
 
 </body>
